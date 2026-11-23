@@ -28,7 +28,7 @@ html[data-theme="light"] {
   --muted: #6e4a53;
   --accent-1: #8a1f3a;   /* burgundy */
   --accent-2: #6d1228;   /* deep wine */
-  --accent-3: #b5651d;   /* bronze */
+  --accent-3: #9a5516;   /* bronze */
 }
 
 /*  2. Base */
@@ -41,7 +41,6 @@ body {
   font: 16px/1.7 "Inter", system-ui, sans-serif;
   color: var(--text);
   background: linear-gradient(160deg, var(--bg-1), var(--bg-2));
-  background-attachment: fixed;
   min-height: 100vh;
   /* Smooth colour change when the theme is switched */
   transition: background 0.3s ease, color 0.3s ease;
@@ -49,6 +48,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg-1);
   /* Stops the sticky header from covering section titles when jumping */
   scroll-padding-top: 84px;
 }
@@ -327,10 +327,10 @@ textarea {
   resize: vertical;
 }
 
-input:focus,
-textarea:focus {
+input:focus, textarea:focus, select:focus {
   border-color: var(--accent-2);
   outline: none;
+  box-shadow: 0 0 0 3px rgba(194, 48, 79, 0.3);
 }
 
 .error {
@@ -422,9 +422,6 @@ textarea:focus {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.search__row input:focus {
-  box-shadow: 0 0 0 3px rgba(194, 48, 79, 0.25);
-}
 
 .search__count {
   min-height: 22px;
