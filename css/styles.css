@@ -1,3 +1,4 @@
+/* Sidrah Sanaullah — portfolio styles */
 
 /* Design tokens (colors, spacing, etc.) */
 :root {
@@ -484,17 +485,34 @@ input:focus, textarea:focus, select:focus {
   animation: fadeUp 0.35s ease;
 }
 
-/*  Respect users who ask for less motion */
+
+/* Respect users who ask for less motion */
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { transition: none !important; }
-  .reveal-ready .reveal { opacity: 1; transform: none;}
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+
+  .reveal-ready .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
   .empty,
   .form__status:not(:empty),
-  .error:not(:empty) { animation: none;}
+  .error:not(:empty) {
+    animation: none;
+  }
+
   .project:hover,
+  .project.reveal.is-visible:hover,
   .btn:hover,
-  .skills li:hover { transform: none; }
+  .skills li:hover {
+    transform: none;
+  }
 }
 
 #repoGrid .project {
@@ -506,11 +524,18 @@ input:focus, textarea:focus, select:focus {
   overflow-wrap: anywhere;
 }
 
+/* Project filter */
 .filter label {
   font-size: 14px;
   color: var(--muted);
   margin-right: 8px;
 }
+
+.filter {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
 
 select {
   font: inherit;
@@ -527,6 +552,7 @@ select {
   display: none;
 }
 
+/* Visitor name */
 .visitor {
   margin-top: 28px;
   max-width: 420px;
@@ -553,11 +579,6 @@ select {
 .visitor p {
   margin: 12px 0 0;
   color: var(--accent-1);
-}
-
-.filter {
-  margin-top: 24px;
-  margin-bottom: 24px;
 }
 
 #forgetName {
