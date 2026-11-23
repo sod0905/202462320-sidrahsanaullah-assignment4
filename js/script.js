@@ -65,7 +65,7 @@ navLinks.querySelectorAll("a").forEach(function (link) {
 
 /* 4. Contact form validation */
 const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+const formStatus = document.getElementById("formStatus");
 
 // Simple check: some characters, an @, more characters, a dot, more characters
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -86,7 +86,7 @@ form.addEventListener("submit", function (event) {
   showError("nameError", "");
   showError("emailError", "");
   showError("messageError", "");
-  status.textContent = "";
+  formStatus.textContent = "";
 
   if (name === "") {
     showError("nameError", "Enter your name.");
@@ -104,7 +104,7 @@ form.addEventListener("submit", function (event) {
   }
 
   if (valid) {
-    status.textContent = "Thank you, " + name + " — your message is valid. However, this is a static site so it won't actually be sent anywhere.";
+    formStatus.textContent = "Thank you, " + name + " — your message is valid. However, this is a static site so it won't actually be sent anywhere.";
     form.reset();
   }
 });
@@ -126,7 +126,7 @@ setGreeting();
   // If the markup is missing, stop quietly so the rest of the site still works
   if (!input || !cards.length) return;
 
-  //
+  
   const searchText = cards.map((card) => card.textContent.toLowerCase());
 
   function updateResults() {
@@ -193,7 +193,7 @@ setGreeting();
   });
 })();
 
-/* GitHub repositories */ //The api integration
+/* GitHub repositories with API Integration */ 
 
 const repoStatus = document.getElementById("repoStatus");
 repoStatus.textContent = "Loading repositories...";

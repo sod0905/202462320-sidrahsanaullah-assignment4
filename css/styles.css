@@ -1,9 +1,5 @@
-/* =========================================================
-   Sidrah Sanaullah — portfolio styles
-   Order: tokens → base → nav → hero → sections → form → footer → responsive
-   ========================================================= */
 
-/*  1. Design tokens (colors, spacing, etc.) */
+/* Design tokens (colors, spacing, etc.) */
 :root {
   --bg-1: #12060a;
   --bg-2: #1c0a10;
@@ -31,10 +27,11 @@ html[data-theme="light"] {
   --accent-3: #9a5516;   /* bronze */
 }
 
-/*  2. Base */
+/*  Base */
 * {
   box-sizing: border-box;
 }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -75,7 +72,7 @@ a {
   outline-offset: 3px;
 }
 
-/* 3. Navigation */
+/* Navigation */
 .nav {
   position: sticky;
   top: 0;
@@ -149,11 +146,11 @@ a {
   border-radius: 2px;
 }
 
-/*  4. Hero  */
+/*  Hero  */
 .hero {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 90px 24px 60px;
+  padding: 90px 24px 20px;
 }
 
 .hero__greeting {
@@ -218,7 +215,7 @@ a {
   border-color: var(--accent-1);
 }
 
-/*  5. Sections  */
+/*  Sections  */
 .section {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -297,7 +294,7 @@ a {
   padding: 8px 16px;
 }
 
-/*  6. Contact form  */
+/*  Contact form  */
 .form {
   margin-top: 22px;
   max-width: 560px;
@@ -345,7 +342,7 @@ input:focus, textarea:focus, select:focus {
   font-size: 15px;
 }
 
-/*  7. Footer */
+/*  Footer */
 .footer {
   text-align: center;
   color: var(--muted);
@@ -355,7 +352,7 @@ input:focus, textarea:focus, select:focus {
   margin-top: 40px;
 }
 
-/*  8. Responsive: tablet and mobile  */
+/*  Responsive: tablet and mobile  */
 @media (max-width: 760px) {
 
   /* Menu collapses into a dropdown opened by the hamburger */
@@ -378,24 +375,9 @@ input:focus, textarea:focus, select:focus {
   }
 
   /* Class added by JavaScript when the hamburger is tapped */
-  .nav__links.is-open {
-    display: flex;
-  }
+  .nav__links.is-open { display: flex; }
+  .hero { padding-top: 56px; }
 
-  .hero {
-    padding-top: 56px;
-  }
-}
-
-/* Respect users who ask for less motion */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  * {
-    transition: none !important;
-  }
 }
 
 /*  Project search  */
@@ -422,16 +404,11 @@ input:focus, textarea:focus, select:focus {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 .search__count {
   min-height: 22px;
   margin: 8px 0 0;
   font-size: 14px;
   color: var(--muted);
-}
-
-.project[hidden] {
-  display: none;
 }
 
 /* Empty state */
@@ -445,10 +422,6 @@ input:focus, textarea:focus, select:focus {
   animation: fadeUp 0.35s ease;
 }
 
-.empty[hidden] {
-  display: none;
-}
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -459,7 +432,8 @@ input:focus, textarea:focus, select:focus {
     transform: none;
   }
 }
-/* ---------- Hover effects ---------- */
+
+/* Hover effects */
 .project {
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -488,7 +462,7 @@ input:focus, textarea:focus, select:focus {
   transform: translateY(-2px);
 }
 
-/* ---------- Fade-in on scroll  ---------- */
+/* Fade-in on scroll */
 .reveal-ready .reveal {
   opacity: 0;
   transform: translateY(18px);
@@ -504,37 +478,23 @@ input:focus, textarea:focus, select:focus {
   transform: translateY(-6px);
 }
 
-/* ---------- Animated form messages ---------- */
+/*  Animated form messages */
 .form__status:not(:empty),
 .error:not(:empty) {
   animation: fadeUp 0.35s ease;
 }
 
-/* ---------- Respect users who ask for less motion ---------- */
+/*  Respect users who ask for less motion */
 @media (prefers-reduced-motion: reduce) {
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+  .reveal-ready .reveal { opacity: 1; transform: none;}
   .empty,
   .form__status:not(:empty),
-  .error:not(:empty) {
-    animation: none;
-  }
-
+  .error:not(:empty) { animation: none;}
   .project:hover,
   .btn:hover,
-  .skills li:hover {
-    transform: none;
-  }
-}
-
-#repoGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 1rem;
-  align-items: stretch;
+  .skills li:hover { transform: none; }
 }
 
 #repoGrid .project {
@@ -546,12 +506,8 @@ input:focus, textarea:focus, select:focus {
   overflow-wrap: anywhere;
 }
 
-.filter {
-  margin-top: 18px;
-}
-
 .filter label {
-  font-size: 8px;
+  font-size: 14px;
   color: var(--muted);
   margin-right: 8px;
 }
@@ -595,18 +551,8 @@ select {
 }
 
 .visitor p {
-  margin: 0;
+  margin: 12px 0 0;
   color: var(--accent-1);
-} 
-
-.visitor p {
-  margin-top: 12px;
-  margin-bottom: 0;
-}
-
-
-.hero {
-  padding-bottom: 20px;
 }
 
 .filter {
@@ -616,8 +562,4 @@ select {
 
 #forgetName {
   margin-top: 14px;
-}
-
-.project.filtered-out {
-  display: none;
 }
