@@ -14,6 +14,8 @@
   --radius: 16px;
   --max-width: 980px;
 }
+:root                    { --overlay: rgba(18, 6, 10, 0.82); }
+html[data-theme="light"] { --overlay: rgba(251, 245, 246, 0.90); }
 
 /* Light theme: the JS adds data-theme="light" to <html> */
 html[data-theme="light"] {
@@ -38,10 +40,22 @@ body {
   margin: 0;
   font: 16px/1.7 "Inter", system-ui, sans-serif;
   color: var(--text);
-  background: linear-gradient(160deg, var(--bg-1), var(--bg-2));
   min-height: 100vh;
   /* Smooth colour change when the theme is switched */
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background:
+    linear-gradient(var(--overlay), var(--overlay)),
+    url("../assets/images/background.webp") center / cover no-repeat;
 }
 
 html {
