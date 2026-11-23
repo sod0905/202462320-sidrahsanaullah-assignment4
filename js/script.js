@@ -27,11 +27,15 @@ function setGreeting() {
 /* 2. Theme toggle */
 const themeToggle = document.getElementById("themeToggle");
 
+function safeGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+function safeSet(key, value) { try { localStorage.setItem(key, value); } catch (e) {} }
+function safeRemove(key) { try { localStorage.removeItem(key); } catch (e) {} }
+
 function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   // Button always shows the theme you would switch TO
   themeToggle.textContent = theme === "light" ? "Dark mode" : "Light mode";
-  localStorage.setItem("theme", theme);
+  safeSet("theme", theme);;
 }
 
 themeToggle.addEventListener("click", function () {
@@ -40,7 +44,7 @@ themeToggle.addEventListener("click", function () {
 });
 
 // Load the theme the visitor chose last time, default to dark
-applyTheme(localStorage.getItem("theme") || "dark");
+applyTheme(safeGet("theme") || "dark");
 
 /* 3. Mobile menu  */
 const navToggle = document.getElementById("navToggle");
@@ -100,7 +104,7 @@ form.addEventListener("submit", function (event) {
   }
 
   if (valid) {
-    status.textContent = "Thank you!" + name + " — your message has been recorded.";
+    status.textContent = "Thank you, " + name + " — your message is valid. However, this is a static site so it won't actually be sent anywhere.";
     form.reset();
   }
 });
@@ -289,7 +293,7 @@ const forgetBtn = document.getElementById("forgetName");
 
 // Show the form if there is no saved name, otherwise show the welcome
 function showVisitor() {
-  const name = localStorage.getItem("visitorName"); 
+  const name = safeGet("visitorName");
   const hasName = name !== null;
 
   visitorForm.hidden = hasName;   // hide the form once we know the name
@@ -309,13 +313,13 @@ visitorForm.addEventListener("submit", (event) => {
     return;
   }
 
-  localStorage.setItem("visitorName", name); // save in the browser
+  safeSet("visitorName", name); // save in the browser
   visitorNameInput.value = "";
   showVisitor();
 });
 // "Not you?" deletes the saved name and brings the form back
 forgetBtn.addEventListener("click", () => {
-  localStorage.removeItem("visitorName");
+  safeRemove("visitorName");
   showVisitor();
 });
 

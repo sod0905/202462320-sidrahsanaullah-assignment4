@@ -620,3 +620,7 @@ select {
 #forgetName {
   margin-top: 14px;
 }
+
+.project.filtered-out {
+  display: none;
+}
