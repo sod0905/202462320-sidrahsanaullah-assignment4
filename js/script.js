@@ -21,7 +21,9 @@ function setGreeting() {
     text = "Good evening";
   }
 
-  document.getElementById("greeting").textContent = text + "! Welcome to my portfolio :)";
+  const name = safeGet("visitorName");
+  const greeting = name ? text + ", " + name + "!" : text + "!";
+  document.getElementById("greeting").textContent = greeting + " Welcome to my portfolio :)";
 }
 
 /* 2. Theme toggle */
@@ -303,6 +305,8 @@ function showVisitor() {
   if (hasName) {
     visitorInfo.textContent = `Welcome back, ${name}!`;
   }
+
+  setGreeting(); // update the greeting in case the visitor's name was just set
 }
 
 visitorForm.addEventListener("submit", (event) => {
