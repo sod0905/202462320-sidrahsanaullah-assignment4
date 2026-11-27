@@ -35,7 +35,9 @@ Claude provided explanations, code suggestions, and code review. It did not dire
 | ID | Tool (model) | Date | Purpose | Files affected | What I changed and how I verified it |
 |---|---|---|---|---|---|
 | C01 | Claude (Sonnet 5.5) | 2026-11-22 to 2026-11-24 | Reviewed the portfolio code, explained bugs and fixes, helped debug the storage and image issues, suggested the Assignment 4 design changes, and explained deployment and documentation steps.| index.html, css/styles.css, js/script.js, assets/images/* | I applied selected changes manually and used browser previews and console messages while debugging. I did not use the combined search-and-filter rewrite. The current repository shows the design and storage changes; search-count behavior still needs improvement. |
-A01 | Claude (Sonnet 5.5)	| 2026-11-23	Generated a complete Assignment 4 code ZIP. I decided not to use the full rewrite and asked for individual fixes instead. |	No files affected since it was unused | I kept my own project and applied selected suggestions separately. I did not use or test the full ZIP. |
+| A01 | Claude (Sonnet 5.5) | 2026-11-23 | Generated a complete Assignment 4 code ZIP. I chose not to use the full rewrite and asked for individual fixes instead. | artifacts/202462320-sidrahsanaullah-assignment4-code.zip | I kept my own project and applied selected suggestions separately. I did not use or test the ZIP. |
+
+
 
 
 Declaration

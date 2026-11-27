@@ -113,12 +113,9 @@ a {
 }
 
 .nav__brand {
-  font-family: "Space Grotesk", sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--accent-1);
 }
 
 .nav__links {
@@ -190,12 +187,6 @@ a {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-}
-
-.hero__tagline {
-  font-size: clamp(18px, 3vw, 22px);
-  margin: 0 0 18px;
-  max-width: 60ch;
 }
 
 .hero__bio {
@@ -509,7 +500,6 @@ input:focus, textarea:focus, select:focus {
   animation: fadeUp 0.35s ease;
 }
 
-
 /* Respect users who ask for less motion */
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -559,7 +549,6 @@ input:focus, textarea:focus, select:focus {
   margin-top: 24px;
   margin-bottom: 24px;
 }
-
 
 select {
   font: inherit;

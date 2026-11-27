@@ -37,7 +37,7 @@ function applyTheme(theme) {
   document.documentElement.setAttribute("data-theme", theme);
   // Button always shows the theme you would switch TO
   themeToggle.textContent = theme === "light" ? "Dark mode" : "Light mode";
-  safeSet("theme", theme);;
+  safeSet("theme", theme);
 }
 
 themeToggle.addEventListener("click", function () {
@@ -114,9 +114,6 @@ form.addEventListener("submit", function (event) {
 /* 5. Footer year */
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* Run the greeting once everything above is set up */
-setGreeting();
-
 /* Live project search */
 (function () {
   const input = document.getElementById("projectSearch");
@@ -127,10 +124,7 @@ setGreeting();
 
   // If the markup is missing, stop quietly so the rest of the site still works
   if (!input || !cards.length) return;
-
-  
   const searchText = cards.map((card) => card.textContent.toLowerCase());
-
   function updateResults() {
     const query = input.value.trim().toLowerCase();
     let visible = 0;

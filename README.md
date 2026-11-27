@@ -2,7 +2,7 @@
 
 This is the final version (Assignment 4) of my personal portfolio website. I made it with HTML, CSS and JavaScript. It is a static front-end site, so it needs no backend or installation.
 
-Live site:
+Live site: https://sod0905.github.io/202462320-sidrahsanaullah-assignment4/
 
 ## Project Description
 The website introduces me, shows the projects I have worked on, loads my public repositories live from GitHub, lists my skills, and has a contact form. It builds on Assignments 1, 2 and 3, and in this version I focused on polish: fixing bugs, handling errors, making it responsive, and giving it a personal visual identity in relation to me.
