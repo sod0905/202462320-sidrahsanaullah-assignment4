@@ -44,7 +44,9 @@ Contact: fill in name, email and a message of at least 10 characters. Mistakes a
 ## Known Limitations
 
 Contact form: It checks the fields but doesn’t send or save the message.
+
 GitHub section: It needs internet. If loading fails, it shows a general error message; there’s no retry button or cached data, and repository cards don’t link to GitHub.
+
 Saved name and theme: They’re stored only in that browser, so they won’t follow visitors to another device.
 
 ## AI Use Summary
