@@ -41,6 +41,12 @@ Projects: type in the search box (for example python) or pick a language from th
 GitHub section: shows my repositories. If it cannot load, a message explains what happened.
 Contact: fill in name, email and a message of at least 10 characters. Mistakes are explained under each field.
 
+## Known Limitations
+
+Contact form: It checks the fields but doesn’t send or save the message.
+GitHub section: It needs internet. If loading fails, it shows a general error message; there’s no retry button or cached data, and repository cards don’t link to GitHub.
+Saved name and theme: They’re stored only in that browser, so they won’t follow visitors to another device.
+
 ## AI Use Summary
 I used Claude (Anthropic) as a code reviewer, debugging helper and documentation assistant: it reviewed my Assignment 3 code, explained bugs and how to fix them, helped with the design changes, and drafted documentation that I then checked against my code. I applied and tested the changes myself. The full details, the usage log and my declaration are in docs/ai-usage-report.md.
 
